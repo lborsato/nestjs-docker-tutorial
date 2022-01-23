@@ -1,9 +1,19 @@
 import { Injectable } from '@nestjs/common';
 
+const IDENTITY = 'Fortis'
+const ICON = 'Fortis'
+
 export interface Movie {
   id: number;
   name: string;
   year: number;
+}
+
+export interface Identity {
+  name: string;
+  icon: string;
+  hasConfig: boolean;
+  hasInfo: boolean;
 }
 
 @Injectable()
@@ -16,5 +26,14 @@ export class AppService {
 
   getMovies(): Movie[] {
     return this.movies;
+  }
+
+  getIdentity() : Identity {
+    return {
+      name: IDENTITY,
+      icon: ICON,
+      hasConfig: true,
+      hasInfo: true
+    };
   }
 }
