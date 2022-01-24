@@ -56,7 +56,7 @@ export class AppService {
 
   getInfo(): Data {
     return {
-      url: HELLO_URL,
+      url: DEMO_URL,
     };
   }
 
