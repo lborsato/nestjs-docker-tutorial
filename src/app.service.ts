@@ -3,6 +3,7 @@ import { Injectable } from '@nestjs/common';
 const IDENTITY = 'Fortis';
 const ICON = 'Fortis';
 const DEMO_URL = 'https://fiddle.sencha.com';
+const HELLO_URL = 'http://microservice.local-dev.goboomtown.com:3000/hello';
 
 export interface Movie {
   id: number;
@@ -19,6 +20,10 @@ export interface Identity {
 
 export interface Data {
   url: string;
+}
+
+export interface Hello {
+  msg: string;
 }
 
 
@@ -51,7 +56,13 @@ export class AppService {
 
   getInfo(): Data {
     return {
-      url: DEMO_URL,
+      url: HELLO_URL,
+    };
+  }
+
+  getHello(): Hello {
+    return {
+      msg: 'Hello, World!',
     };
   }
 }
