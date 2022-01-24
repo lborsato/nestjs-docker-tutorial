@@ -50,13 +50,13 @@ export class AppService {
 
   getConfig(): Data {
     return {
-      url: HELLO_URL,
+      url: DEMO_URL,
     };
   }
 
   getInfo(): Data {
     return {
-      url: DEMO_URL,
+      url: HELLO_URL,
     };
   }
 
