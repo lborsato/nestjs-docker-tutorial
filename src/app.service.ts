@@ -50,7 +50,7 @@ export class AppService {
 
   getConfig(): Data {
     return {
-      url: DEMO_URL,
+      url: HELLO_URL,
     };
   }
 
