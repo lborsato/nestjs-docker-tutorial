@@ -10,12 +10,12 @@ export class AppController {
     return this.appService.getIdentity();
   }
 
-  @Get('/config')
+  @Get('config')
   getConfig(): Data {
     return this.appService.getConfig();
   }
 
-  @Get('/info')
+  @Get('info')
   getInfo(): Data {
     return this.appService.getInfo();
   }
