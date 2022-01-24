@@ -8,6 +8,8 @@ RUN npm install glob rimraf
 
 RUN npm install --only=development
 
+RUN npm i --save @nestjs/serve-static
+
 COPY . .
 
 RUN npm run build
