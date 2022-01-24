@@ -2,6 +2,7 @@ import { Injectable } from '@nestjs/common';
 
 const IDENTITY = 'Fortis';
 const ICON = 'Fortis';
+const DEMO_URL = 'https://fiddle.sencha.com';
 
 export interface Movie {
   id: number;
@@ -15,6 +16,11 @@ export interface Identity {
   hasConfig: boolean;
   hasInfo: boolean;
 }
+
+export interface Data {
+  url: string;
+}
+
 
 @Injectable()
 export class AppService {
@@ -34,6 +40,18 @@ export class AppService {
       icon: ICON,
       hasConfig: true,
       hasInfo: true,
+    };
+  }
+
+  getConfig(): Data {
+    return {
+      url: DEMO_URL,
+    };
+  }
+
+  getInfo(): Data {
+    return {
+      url: DEMO_URL,
     };
   }
 }
