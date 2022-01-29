@@ -6,7 +6,7 @@ import {
 import { map } from 'rxjs/operators';
 
 const REGISTRATION_URL =
-  'https://service-directory-proxy-xzww6y6oeq-uc.a.run.app/v1';
+  'https://service-directory-proxy-xzww6y6oeq-uc.a.run.app/v1/connector';
 const CONNECTOR_URL = 'http://34.150.191.191';
 const CONNECTOR_PORT = '3000';
 
