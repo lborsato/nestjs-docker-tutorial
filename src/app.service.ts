@@ -6,12 +6,6 @@ const DEMO_URL = 'https://fiddle.sencha.com';
 const HELLO_URL =
   'http://microservice.local-dev.goboomtown.com:3000/helloworld.html';
 
-export interface Movie {
-  id: number;
-  name: string;
-  year: number;
-}
-
 export interface Identity {
   name: string;
   icon: string;
@@ -29,16 +23,6 @@ export interface Hello {
 
 @Injectable()
 export class AppService {
-  private movies: Movie[] = [
-    { id: 1, name: 'Star Wars: The Force Awakens', year: 2015 },
-    { id: 2, name: 'Star Wars: The Last Jedi', year: 2017 },
-    { id: 3, name: 'Star Wars: The Rise of Skywalker', year: 2019 },
-  ];
-
-  getMovies(): Movie[] {
-    return this.movies;
-  }
-
   getIdentity(): Identity {
     return {
       name: IDENTITY,
@@ -60,9 +44,7 @@ export class AppService {
     };
   }
 
-  getHello(): Hello {
-    return {
-      msg: 'Hello, World!',
-    };
+  getHello(): string {
+    return 'Hello World!';
   }
 }
