@@ -41,7 +41,7 @@ export class RegistrationService implements OnApplicationBootstrap {
     const configEndpoint: Endpoint = {
       name: 'config',
       address: CONNECTOR_IP,
-      port: 'CONNECTOR_PORT',
+      port: CONNECTOR_PORT,
       path: '/config',
     };
 
