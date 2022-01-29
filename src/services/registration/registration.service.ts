@@ -7,7 +7,9 @@ import { map } from 'rxjs/operators';
 
 const REGISTRATION_URL =
   'https://service-directory-proxy-xzww6y6oeq-uc.a.run.app/v1/connector';
+
 const CONNECTOR_URL = 'http://34.150.191.191';
+const CONNECTOR_IP = '34.150.191.191';
 const CONNECTOR_PORT = '3000';
 
 export interface Connector {
@@ -38,14 +40,14 @@ export class RegistrationService implements OnApplicationBootstrap {
   register() {
     const configEndpoint: Endpoint = {
       name: 'config',
-      address: CONNECTOR_URL,
+      address: CONNECTOR_IP,
       port: 'CONNECTOR_PORT',
       path: '/config',
     };
 
     const infoEndpoint: Endpoint = {
       name: 'info',
-      address: CONNECTOR_URL,
+      address: CONNECTOR_IP,
       port: CONNECTOR_PORT,
       path: '/info',
     };
@@ -54,7 +56,7 @@ export class RegistrationService implements OnApplicationBootstrap {
       base_url: CONNECTOR_URL,
       description: 'Fortis Demo Connector',
       endpoints: [configEndpoint, infoEndpoint],
-      name: 'Fortis Connector',
+      name: 'fortis-connector',
       version: '1.0',
     };
     console.log(connector);
