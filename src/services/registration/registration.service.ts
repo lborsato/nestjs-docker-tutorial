@@ -56,7 +56,7 @@ export class RegistrationService implements OnApplicationBootstrap {
       base_url: CONNECTOR_URL,
       description: 'Fortis Demo Connector',
       endpoints: [configEndpoint, infoEndpoint],
-      name: 'fortis-connector',
+      name: 'fortis-connector-' + Date.now(),
       version: '1.0',
     };
     console.log(connector);
