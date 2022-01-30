@@ -5,8 +5,7 @@ const ICON = 'Fortis';
 const DEMO_URL = 'https://fiddle.sencha.com';
 const HELLO_URL =
   'http://microservice.local-dev.goboomtown.com:3000/helloworld.html';
-const TRANSACTIONS_URL =
-  'http://microservice.local-dev.goboomtown.com:3000/transactions';
+const TRANSACTIONS_URL = 'http://34.150.191.191:3000/transactions';
 
 export interface Identity {
   name: string;
