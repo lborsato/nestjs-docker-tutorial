@@ -47,4 +47,17 @@ export class AppService {
   getHello(): string {
     return 'Hello World!';
   }
+
+  getTransactions(): string {
+    let html = '<h1>Last Three Transactions:</h1>';
+    html += '<table><tr><th>Date</th><th>Description</th><th>Amount</th></tr>';
+    html +=
+      '<table><tr><th>01/30/2022</th><th>Nespresso</th><th>$25.88</th></tr>';
+    html +=
+      '<table><tr><th>01/21/2022</th><th>Ralphs</th><th>$101.22</th></tr>';
+    html +=
+      '<table><tr><th>01/19/2022</th><th>Best Buy</th><th>$722.22</th></tr>';
+    html += '</table>';
+    return html;
+  }
 }

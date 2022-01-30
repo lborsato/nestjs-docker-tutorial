@@ -1,4 +1,4 @@
-import {Controller, Get, Response} from '@nestjs/common';
+import { Controller, Get, Response } from '@nestjs/common';
 import { AppService, Identity, Data, Hello } from './app.service';
 
 @Controller()
@@ -20,10 +20,10 @@ export class AppController {
     return this.appService.getInfo();
   }
 
-  @Get('hello')
+  @Get('transactions')
   htmlResponse(@Response() res) {
     res.set('Content-Type', 'text/html');
-    res.send(`<h1>Hello World</h1>`);
+    res.send(this.appService.getTransactions());
   }
 
   // getHello(): string {
