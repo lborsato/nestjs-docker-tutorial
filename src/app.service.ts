@@ -61,7 +61,8 @@ export class AppService {
   }
 
   getTransactions(): string {
-    let html = '<h2>Last Three Transactions for ' + this.customer.id + ':</h2>';
+    // let html = '<h2>Last Three Transactions for ' + this.customer.id + ':</h2>';
+    let html = '<h2>Last Three Transactions:</h2>';
     html += '<table width="100%">';
     html += '<tr><th>Date</th><th>Description</th><th>Amount</th></tr>';
     html += '<tr><th>01/30/2022</th><th>Nespresso</th><th>$25.88</th></tr>';

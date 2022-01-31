@@ -59,7 +59,7 @@ export class RegistrationService implements OnApplicationBootstrap {
       name: 'fortis-connector-' + Date.now(),
       version: '1.0',
     };
-    console.log(connector);
+    // console.log(connector);
     return this.http
       .post(REGISTRATION_URL, connector)
       .pipe(map((response) => response.data));
