@@ -7,6 +7,11 @@ const HELLO_URL =
   'http://microservice.local-dev.goboomtown.com:3000/helloworld.html';
 const TRANSACTIONS_URL = 'http://34.150.191.191:3000/transactions';
 
+export class Customer {
+  id: string;
+  name: string;
+}
+
 export interface Identity {
   name: string;
   icon: string;
@@ -24,6 +29,7 @@ export interface Hello {
 
 @Injectable()
 export class AppService {
+  private customer: Customer;
   getIdentity(): Identity {
     return {
       name: IDENTITY,
@@ -49,15 +55,18 @@ export class AppService {
     return 'Hello World!';
   }
 
+  setCustomer(customer: Customer): void {
+    console.log('Customer: ', customer);
+    this.customer = customer;
+  }
+
   getTransactions(): string {
-    let html = '<h1>Last Three Transactions:</h1>';
-    html += '<table><tr><th>Date</th><th>Description</th><th>Amount</th></tr>';
-    html +=
-      '<table><tr><th>01/30/2022</th><th>Nespresso</th><th>$25.88</th></tr>';
-    html +=
-      '<table><tr><th>01/21/2022</th><th>Ralphs</th><th>$101.22</th></tr>';
-    html +=
-      '<table><tr><th>01/19/2022</th><th>Best Buy</th><th>$722.22</th></tr>';
+    let html = '<h2>Last Three Transactions for ' + this.customer.id + ':</h2>';
+    html += '<table width="100%">';
+    html += '<tr><th>Date</th><th>Description</th><th>Amount</th></tr>';
+    html += '<tr><th>01/30/2022</th><th>Nespresso</th><th>$25.88</th></tr>';
+    html += '<tr><th>01/21/2022</th><th>Ralphs</th><th>$101.22</th></tr>';
+    html += '<tr><th>01/19/2022</th><th>Best Buy</th><th>$722.22</th></tr>';
     html += '</table>';
     return html;
   }

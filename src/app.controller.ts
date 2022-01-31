@@ -1,5 +1,6 @@
-import { Controller, Get, Response } from '@nestjs/common';
-import { AppService, Identity, Data, Hello } from './app.service';
+import { Controller, Get, Post, Response, Body } from '@nestjs/common';
+import { AppService, Identity, Data, Customer } from './app.service';
+
 
 @Controller()
 export class AppController {
@@ -8,6 +9,13 @@ export class AppController {
   @Get()
   getIdentity(): Identity {
     return this.appService.getIdentity();
+  }
+
+  @Post()
+  setCustomer(@Body() customer: Customer) {
+    console.log(customer);
+    this.appService.setCustomer(customer);
+    return customer;
   }
 
   @Get('config')
@@ -25,8 +33,4 @@ export class AppController {
     res.set('Content-Type', 'text/html');
     res.send(this.appService.getTransactions());
   }
-
-  // getHello(): string {
-  //   return this.appService.getHello();
-  // }
 }
