@@ -1,7 +1,10 @@
 import { Injectable } from '@nestjs/common';
 
 const IDENTITY = 'Fortis';
+const DISPLAY_NAME = 'Fortis Connector';
 const ICON = 'Fortis';
+const VERSION = '1.0.0';
+const COMPANY = 'alchemii';
 const DEMO_URL = 'https://fiddle.sencha.com';
 const HELLO_URL =
   'http://microservice.local-dev.goboomtown.com:3000/helloworld.html';
@@ -14,6 +17,9 @@ export class Customer {
 
 export interface Identity {
   name: string;
+  displayName: string;
+  version: string;
+  company: string;
   icon: string;
   hasConfig: boolean;
   hasInfo: boolean;
@@ -33,6 +39,9 @@ export class AppService {
   getIdentity(): Identity {
     return {
       name: IDENTITY,
+      displayName: DISPLAY_NAME,
+      version: VERSION,
+      company: COMPANY,
       icon: ICON,
       hasConfig: true,
       hasInfo: true,
